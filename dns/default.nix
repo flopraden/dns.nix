@@ -27,6 +27,7 @@ let
           };
           config = {
             zones = { "@" = zone; };
+            _module.args = {lib = lib';};
           };
         }
       ];
