@@ -19,7 +19,8 @@ let
   evalZone = zone:
     (lib.evalModules {
       modules = [
-        { options = {
+        {
+	  options = {
             zones = lib.mkOption {
               type = lib.types.attrsOf types.zone;
               description = "DNS zones";
@@ -27,7 +28,6 @@ let
           };
           config = {
             zones = { "@" = zone; };
-            _module.args = {lib = lib';};
           };
         }
       ];
